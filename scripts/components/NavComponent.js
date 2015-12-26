@@ -7,6 +7,11 @@ module.exports = React.createClass({
 			$('.button-collapse').sideNav();
 		})
 	},
+	componentDidMount: function() {
+		$( document ).ready(function(){
+			$('.button-collapse').sideNav();
+		})
+	},
 	render: function() {
 		return (
 			<div className="nav-wrapper">

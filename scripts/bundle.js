@@ -31764,19 +31764,55 @@ module.exports = React.createClass({
 var React = require('react');
 
 module.exports = React.createClass({
-	displayName: 'exports',
+  displayName: 'exports',
 
-	render: function render() {
-		return React.createElement(
-			'div',
-			null,
-			React.createElement(
-				'h1',
-				null,
-				'Home'
-			)
-		);
-	}
+  componentWillMount: function componentWillMount() {
+    $(document).ready(function () {
+      $('.parallax').parallax();
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'div',
+        { className: 'parallax-container' },
+        React.createElement(
+          'div',
+          { className: 'parallax' },
+          React.createElement('img', { src: './images/0001.jpg' })
+        )
+      ),
+      React.createElement(
+        'div',
+        { className: 'section white' },
+        React.createElement(
+          'div',
+          { className: 'row container' },
+          React.createElement(
+            'h2',
+            { className: 'header' },
+            'Parallax'
+          ),
+          React.createElement(
+            'p',
+            { className: 'grey-text text-darken-3 lighten-3' },
+            'Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.'
+          )
+        )
+      ),
+      React.createElement(
+        'div',
+        { className: 'parallax-container' },
+        React.createElement(
+          'div',
+          { className: 'parallax' },
+          React.createElement('img', { src: './images/0001.jpg' })
+        )
+      )
+    );
+  }
 });
 
 },{"react":161}],164:[function(require,module,exports){
@@ -31787,6 +31823,11 @@ module.exports = React.createClass({
 	displayName: 'exports',
 
 	componentWillMount: function componentWillMount() {
+		$(document).ready(function () {
+			$('.button-collapse').sideNav();
+		});
+	},
+	componentDidMount: function componentDidMount() {
 		$(document).ready(function () {
 			$('.button-collapse').sideNav();
 		});
