@@ -31764,55 +31764,55 @@ module.exports = React.createClass({
 var React = require('react');
 
 module.exports = React.createClass({
-  displayName: 'exports',
+	displayName: 'exports',
 
-  componentWillMount: function componentWillMount() {
-    $(document).ready(function () {
-      $('.parallax').parallax();
-    });
-  },
-  render: function render() {
-    return React.createElement(
-      'div',
-      null,
-      React.createElement(
-        'div',
-        { className: 'parallax-container' },
-        React.createElement(
-          'div',
-          { className: 'parallax' },
-          React.createElement('img', { src: './images/0001.jpg' })
-        )
-      ),
-      React.createElement(
-        'div',
-        { className: 'section white' },
-        React.createElement(
-          'div',
-          { className: 'row container' },
-          React.createElement(
-            'h2',
-            { className: 'header' },
-            'Parallax'
-          ),
-          React.createElement(
-            'p',
-            { className: 'grey-text text-darken-3 lighten-3' },
-            'Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.'
-          )
-        )
-      ),
-      React.createElement(
-        'div',
-        { className: 'parallax-container' },
-        React.createElement(
-          'div',
-          { className: 'parallax' },
-          React.createElement('img', { src: './images/0001.jpg' })
-        )
-      )
-    );
-  }
+	componentWillMount: function componentWillMount() {
+		$(document).ready(function () {
+			$('.parallax').parallax();
+		});
+	},
+	render: function render() {
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(
+				'div',
+				{ className: 'parallax-container' },
+				React.createElement(
+					'div',
+					{ className: 'parallax' },
+					React.createElement('img', { src: './images/stockPitcher.jpg' })
+				)
+			),
+			React.createElement(
+				'div',
+				{ className: 'section white' },
+				React.createElement(
+					'div',
+					{ className: 'row container' },
+					React.createElement(
+						'h2',
+						{ className: 'header' },
+						'DFW ArmCare'
+					),
+					React.createElement(
+						'p',
+						{ className: 'grey-text text-darken-3 lighten-3' },
+						'We build champions with key techniques and fundamental stregth and conditioning.'
+					)
+				)
+			),
+			React.createElement(
+				'div',
+				{ className: 'parallax-container' },
+				React.createElement(
+					'div',
+					{ className: 'parallax' },
+					React.createElement('img', { src: './images/stockBat.jpg' })
+				)
+			)
+		);
+	}
 });
 
 },{"react":161}],164:[function(require,module,exports){
@@ -31827,23 +31827,18 @@ module.exports = React.createClass({
 			$('.button-collapse').sideNav();
 		});
 	},
-	componentDidMount: function componentDidMount() {
-		$(document).ready(function () {
-			$('.button-collapse').sideNav();
-		});
-	},
 	render: function render() {
 		return React.createElement(
 			'div',
 			{ className: 'nav-wrapper' },
 			React.createElement(
 				'a',
-				{ href: '#!', className: 'brand-logo' },
+				{ href: '#', className: 'brand-logo' },
 				React.createElement('img', { className: 'navLogo', src: './images/0001.jpg' })
 			),
 			React.createElement(
 				'a',
-				{ href: '#', dataActivates: 'mobile-demo', className: 'button-collapse' },
+				{ href: '#', 'data-activates': 'mobile-demo', className: 'button-collapse' },
 				React.createElement(
 					'i',
 					{ className: 'material-icons' },
@@ -31858,8 +31853,8 @@ module.exports = React.createClass({
 					null,
 					React.createElement(
 						'a',
-						{ href: 'sass.html' },
-						'Sass'
+						{ href: '#calendar' },
+						'Calendar'
 					)
 				),
 				React.createElement(
@@ -31867,26 +31862,8 @@ module.exports = React.createClass({
 					null,
 					React.createElement(
 						'a',
-						{ href: 'badges.html' },
-						'Components'
-					)
-				),
-				React.createElement(
-					'li',
-					null,
-					React.createElement(
-						'a',
-						{ href: 'collapsible.html' },
-						'Javascript'
-					)
-				),
-				React.createElement(
-					'li',
-					null,
-					React.createElement(
-						'a',
-						{ href: 'mobile.html' },
-						'Mobile'
+						{ href: '#videos' },
+						'Videos'
 					)
 				)
 			),
@@ -31898,8 +31875,8 @@ module.exports = React.createClass({
 					null,
 					React.createElement(
 						'a',
-						{ href: 'sass.html' },
-						'Sass'
+						{ href: '#calendar' },
+						'Calendar'
 					)
 				),
 				React.createElement(
@@ -31907,26 +31884,8 @@ module.exports = React.createClass({
 					null,
 					React.createElement(
 						'a',
-						{ href: 'badges.html' },
-						'Components'
-					)
-				),
-				React.createElement(
-					'li',
-					null,
-					React.createElement(
-						'a',
-						{ href: 'collapsible.html' },
-						'Javascript'
-					)
-				),
-				React.createElement(
-					'li',
-					null,
-					React.createElement(
-						'a',
-						{ href: 'mobile.html' },
-						'Mobile'
+						{ href: '#videos' },
+						'Videos'
 					)
 				)
 			)
@@ -31970,7 +31929,7 @@ var VideosPageComponent = require('./components/VideosPageComponent');
 var Router = Backbone.Router.extend({
 	routes: {
 		'': 'home',
-		'schedule': 'events',
+		'calendar': 'events',
 		'videos': 'videos'
 	},
 	home: function home() {

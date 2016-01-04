@@ -13,7 +13,7 @@ var VideosPageComponent = require('./components/VideosPageComponent');
 var Router = Backbone.Router.extend({
 	routes: {
 		'': 'home',
-		'schedule': 'events',
+		'calendar': 'events',
 		'videos': 'videos'
 	},
 	home: function() {
