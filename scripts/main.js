@@ -7,6 +7,7 @@ window.jQuery = $;
 
 var HomePageComponent = require('./components/HomePageComponent');
 var NavComponent = require('./components/NavComponent');
+var FooterComponent = require('./components/FooterComponent');
 var EventsPageComponent = require('./components/EventsPageComponent');
 var VideosPageComponent = require('./components/VideosPageComponent');
 
@@ -33,4 +34,8 @@ Backbone.history.start();
 ReactDOM.render(
 		<NavComponent router={r}/>,
 		document.getElementById('nav')
+	);
+ReactDOM.render(
+		<FooterComponent router={r}/>,
+		document.getElementById('footer')
 	);

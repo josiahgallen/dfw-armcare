@@ -31764,6 +31764,106 @@ module.exports = React.createClass({
 var React = require('react');
 
 module.exports = React.createClass({
+  displayName: 'exports',
+
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'div',
+        { className: 'container' },
+        React.createElement(
+          'div',
+          { className: 'row' },
+          React.createElement(
+            'div',
+            { className: 'col l6 s12' },
+            React.createElement(
+              'h5',
+              { className: 'white-text' },
+              'Footer Content'
+            ),
+            React.createElement(
+              'p',
+              { className: 'grey-text text-lighten-4' },
+              'You can use rows and columns here to organize your footer content.'
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'col l4 offset-l2 s12' },
+            React.createElement(
+              'h5',
+              { className: 'white-text' },
+              'Links'
+            ),
+            React.createElement(
+              'ul',
+              null,
+              React.createElement(
+                'li',
+                null,
+                React.createElement(
+                  'a',
+                  { className: 'grey-text text-lighten-3', href: '#!' },
+                  'Link 1'
+                )
+              ),
+              React.createElement(
+                'li',
+                null,
+                React.createElement(
+                  'a',
+                  { className: 'grey-text text-lighten-3', href: '#!' },
+                  'Link 2'
+                )
+              ),
+              React.createElement(
+                'li',
+                null,
+                React.createElement(
+                  'a',
+                  { className: 'grey-text text-lighten-3', href: '#!' },
+                  'Link 3'
+                )
+              ),
+              React.createElement(
+                'li',
+                null,
+                React.createElement(
+                  'a',
+                  { className: 'grey-text text-lighten-3', href: '#!' },
+                  'Link 4'
+                )
+              )
+            )
+          )
+        )
+      ),
+      React.createElement(
+        'div',
+        { className: 'footer-copyright' },
+        React.createElement(
+          'div',
+          { className: 'container' },
+          '© 2014 Copyright Text',
+          React.createElement(
+            'a',
+            { className: 'grey-text text-lighten-4 right', href: '#!' },
+            'More Links'
+          )
+        )
+      )
+    );
+  }
+});
+
+},{"react":161}],164:[function(require,module,exports){
+'use strict';
+var React = require('react');
+
+module.exports = React.createClass({
 	displayName: 'exports',
 
 	componentWillMount: function componentWillMount() {
@@ -31815,7 +31915,7 @@ module.exports = React.createClass({
 	}
 });
 
-},{"react":161}],164:[function(require,module,exports){
+},{"react":161}],165:[function(require,module,exports){
 'use strict';
 var React = require('react');
 
@@ -31853,7 +31953,7 @@ module.exports = React.createClass({
 					null,
 					React.createElement(
 						'a',
-						{ href: '#calendar' },
+						{ href: 'https://dfwarmcare.teamapp.com/events', target: 'blank' },
 						'Calendar'
 					)
 				),
@@ -31893,7 +31993,7 @@ module.exports = React.createClass({
 	}
 });
 
-},{"react":161}],165:[function(require,module,exports){
+},{"react":161}],166:[function(require,module,exports){
 'use strict';
 var React = require('react');
 
@@ -31905,15 +32005,24 @@ module.exports = React.createClass({
 			'div',
 			null,
 			React.createElement(
-				'h1',
+				'h4',
 				null,
-				'Videos'
+				'Select the video you want to watch from playlist below.'
+			),
+			React.createElement(
+				'div',
+				{ className: 'container' },
+				React.createElement(
+					'div',
+					{ className: 'video-container' },
+					React.createElement('iframe', { width: '560', height: '315', src: 'https://www.youtube.com/embed/videoseries?list=PLeoA0P4gx2uoTR5OG9tMBpVXX0cpx0v_F', frameborder: '0', allowfullscreen: true })
+				)
 			)
 		);
 	}
 });
 
-},{"react":161}],166:[function(require,module,exports){
+},{"react":161}],167:[function(require,module,exports){
 'use strict';
 var React = require('react');
 var ReactDOM = require('react-dom');
@@ -31923,6 +32032,7 @@ window.jQuery = $;
 
 var HomePageComponent = require('./components/HomePageComponent');
 var NavComponent = require('./components/NavComponent');
+var FooterComponent = require('./components/FooterComponent');
 var EventsPageComponent = require('./components/EventsPageComponent');
 var VideosPageComponent = require('./components/VideosPageComponent');
 
@@ -31947,8 +32057,9 @@ var r = new Router();
 Backbone.history.start();
 
 ReactDOM.render(React.createElement(NavComponent, { router: r }), document.getElementById('nav'));
+ReactDOM.render(React.createElement(FooterComponent, { router: r }), document.getElementById('footer'));
 
-},{"./components/EventsPageComponent":162,"./components/HomePageComponent":163,"./components/NavComponent":164,"./components/VideosPageComponent":165,"backbone":1,"jquery":4,"react":161,"react-dom":5}]},{},[166])
+},{"./components/EventsPageComponent":162,"./components/FooterComponent":163,"./components/HomePageComponent":164,"./components/NavComponent":165,"./components/VideosPageComponent":166,"backbone":1,"jquery":4,"react":161,"react-dom":5}]},{},[167])
 
 
 //# sourceMappingURL=bundle.js.map
