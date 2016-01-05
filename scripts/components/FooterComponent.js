@@ -14,7 +14,7 @@ module.exports = React.createClass({
             	  		<div className="col l4 offset-l2 s12">
             	    		<h5 className="white-text">Links</h5>
             	    		<ul>
-            	      			<li><a className="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            	      			<li><a className="grey-text text-lighten-3" href="https://dfwarmcare.teamapp.com/" target="blank">DFW ArmCare on TeamApp</a></li>
             	      			<li><a className="grey-text text-lighten-3" href="#!">Link 2</a></li>
             	      			<li><a className="grey-text text-lighten-3" href="#!">Link 3</a></li>
             	      			<li><a className="grey-text text-lighten-3" href="#!">Link 4</a></li>
@@ -24,8 +24,8 @@ module.exports = React.createClass({
           		</div>
           		<div className="footer-copyright">
             		<div className="container">
-            			© 2014 Copyright Text
-            			<a className="grey-text text-lighten-4 right" href="#!">More Links</a>
+            			<a className="grey-text text-lighten-4 left" href="http://www.josiahgallen.com" target="blank">Site built by Josiah Allen</a>
+            			<a className="grey-text text-lighten-4 right" href="#admin">Admin</a>
             		</div>
           		</div>
 			</div>

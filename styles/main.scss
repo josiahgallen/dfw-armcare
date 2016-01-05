@@ -1,10 +1,12 @@
+$armCareRed: #F21217;
+
 .navLogo {
 	height: 1.5em;
 	margin-top: .25em;
 }
 
 nav {
-	background-color: #F21217;
+	background-color: $armCareRed;
 }
 
 h4 {
@@ -13,4 +15,5 @@ h4 {
 
 footer.page-footer {
 	margin-top: 0;
+	background-color: $armCareRed;
 }

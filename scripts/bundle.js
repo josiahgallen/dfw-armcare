@@ -31806,8 +31806,8 @@ module.exports = React.createClass({
                 null,
                 React.createElement(
                   'a',
-                  { className: 'grey-text text-lighten-3', href: '#!' },
-                  'Link 1'
+                  { className: 'grey-text text-lighten-3', href: 'https://dfwarmcare.teamapp.com/', target: 'blank' },
+                  'DFW ArmCare on TeamApp'
                 )
               ),
               React.createElement(
@@ -31847,11 +31847,15 @@ module.exports = React.createClass({
         React.createElement(
           'div',
           { className: 'container' },
-          '© 2014 Copyright Text',
           React.createElement(
             'a',
-            { className: 'grey-text text-lighten-4 right', href: '#!' },
-            'More Links'
+            { className: 'grey-text text-lighten-4 left', href: 'http://www.josiahgallen.com', target: 'blank' },
+            'Site built by Josiah Allen'
+          ),
+          React.createElement(
+            'a',
+            { className: 'grey-text text-lighten-4 right', href: '#admin' },
+            'Admin'
           )
         )
       )
