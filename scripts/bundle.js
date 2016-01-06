@@ -31744,96 +31744,78 @@ module.exports = require('./lib/React');
 var React = require('react');
 
 module.exports = React.createClass({
-  displayName: 'exports',
+	displayName: 'exports',
 
-  render: function render() {
-    return React.createElement(
-      'div',
-      null,
-      React.createElement(
-        'h1',
-        null,
-        'Admin Tools'
-      ),
-      React.createElement(
-        'div',
-        { className: 'container' },
-        React.createElement(
-          'ul',
-          { className: 'collapsible popout', 'data-collapsible': 'accordion' },
-          React.createElement(
-            'li',
-            null,
-            React.createElement(
-              'div',
-              { className: 'collapsible-header' },
-              React.createElement(
-                'i',
-                { className: 'material-icons' },
-                'video_library'
-              ),
-              'Manage Video Access'
-            ),
-            React.createElement(
-              'div',
-              { className: 'collapsible-body' },
-              React.createElement(
-                'p',
-                null,
-                'Lorem ipsum dolor sit amet.'
-              )
-            )
-          ),
-          React.createElement(
-            'li',
-            null,
-            React.createElement(
-              'div',
-              { className: 'collapsible-header' },
-              React.createElement(
-                'i',
-                { className: 'material-icons' },
-                'place'
-              ),
-              'Second'
-            ),
-            React.createElement(
-              'div',
-              { className: 'collapsible-body' },
-              React.createElement(
-                'p',
-                null,
-                'Lorem ipsum dolor sit amet.'
-              )
-            )
-          ),
-          React.createElement(
-            'li',
-            null,
-            React.createElement(
-              'div',
-              { className: 'collapsible-header' },
-              React.createElement(
-                'i',
-                { className: 'material-icons' },
-                'whatshot'
-              ),
-              'Third'
-            ),
-            React.createElement(
-              'div',
-              { className: 'collapsible-body' },
-              React.createElement(
-                'p',
-                null,
-                'Lorem ipsum dolor sit amet.'
-              )
-            )
-          )
-        )
-      )
-    );
-  }
+	componentDidMount: function componentDidMount() {
+		$(document).ready(function () {
+			$('.collapsible').collapsible();
+		});
+	},
+	render: function render() {
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(
+				'h1',
+				null,
+				'Admin Tools'
+			),
+			React.createElement(
+				'div',
+				{ className: 'container' },
+				React.createElement(
+					'ul',
+					{ className: 'collapsible popout', 'data-collapsible': 'accordion' },
+					React.createElement(
+						'li',
+						null,
+						React.createElement(
+							'div',
+							{ className: 'collapsible-header' },
+							React.createElement(
+								'i',
+								{ className: 'material-icons' },
+								'perm_identity'
+							),
+							'Athlete Records'
+						),
+						React.createElement(
+							'div',
+							{ className: 'collapsible-body' },
+							React.createElement(
+								'p',
+								null,
+								'Lorem ipsum dolor sit amet.'
+							)
+						)
+					),
+					React.createElement(
+						'li',
+						null,
+						React.createElement(
+							'div',
+							{ className: 'collapsible-header' },
+							React.createElement(
+								'i',
+								{ className: 'material-icons' },
+								'video_library'
+							),
+							'Manage Video Access'
+						),
+						React.createElement(
+							'div',
+							{ className: 'collapsible-body' },
+							React.createElement(
+								'p',
+								null,
+								'Lorem ipsum dolor sit amet.'
+							)
+						)
+					)
+				)
+			)
+		);
+	}
 });
 
 },{"react":161}],163:[function(require,module,exports){
@@ -31861,175 +31843,182 @@ module.exports = React.createClass({
 var React = require('react');
 
 module.exports = React.createClass({
-    displayName: 'exports',
+	displayName: 'exports',
 
-    getInitialState: function getInitialState() {
-        return {
-            error: null
-        };
-    },
-    componentWillMount: function componentWillMount() {
-        $(document).ready(function () {
-            $('.modal-trigger').leanModal();
-        });
-    },
-    render: function render() {
-        return React.createElement(
-            'div',
-            null,
-            React.createElement(
-                'div',
-                { className: 'container' },
-                React.createElement(
-                    'div',
-                    { className: 'row' },
-                    React.createElement(
-                        'div',
-                        { className: 'col l6 s12' },
-                        React.createElement(
-                            'h5',
-                            { className: 'white-text' },
-                            'Footer Content'
-                        ),
-                        React.createElement(
-                            'p',
-                            { className: 'grey-text text-lighten-4' },
-                            'You can use rows and columns here to organize your footer content.'
-                        )
-                    ),
-                    React.createElement(
-                        'div',
-                        { className: 'col l4 offset-l2 s12' },
-                        React.createElement(
-                            'h5',
-                            { className: 'white-text' },
-                            'Links'
-                        ),
-                        React.createElement(
-                            'ul',
-                            null,
-                            React.createElement(
-                                'li',
-                                null,
-                                React.createElement(
-                                    'a',
-                                    { className: 'grey-text text-lighten-3', href: 'https://dfwarmcare.teamapp.com/', target: 'blank' },
-                                    'DFW ArmCare on TeamApp'
-                                )
-                            ),
-                            React.createElement(
-                                'li',
-                                null,
-                                React.createElement(
-                                    'a',
-                                    { className: 'grey-text text-lighten-3', href: '#!' },
-                                    'Link 2'
-                                )
-                            )
-                        )
-                    )
-                )
-            ),
-            React.createElement(
-                'div',
-                { className: 'footer-copyright' },
-                React.createElement(
-                    'div',
-                    { className: 'container' },
-                    React.createElement(
-                        'a',
-                        { className: 'grey-text text-lighten-4 left', href: 'http://www.josiahgallen.com', target: 'blank' },
-                        'Built by Josiah Allen'
-                    ),
-                    React.createElement(
-                        'a',
-                        { className: 'grey-text text-lighten-4 right modal-trigger', href: '#modal1' },
-                        'Admin'
-                    )
-                )
-            ),
-            React.createElement(
-                'div',
-                { id: 'modal1', className: 'modal' },
-                React.createElement(
-                    'div',
-                    { className: 'modal-content' },
-                    React.createElement(
-                        'h4',
-                        null,
-                        'Admin Login'
-                    ),
-                    React.createElement(
-                        'div',
-                        { className: 'row' },
-                        React.createElement(
-                            'form',
-                            { onSubmit: this.onLogin, className: 'col s12' },
-                            React.createElement(
-                                'div',
-                                { className: 'row' },
-                                React.createElement(
-                                    'div',
-                                    { className: 'input-field col s12' },
-                                    React.createElement('input', { id: 'email', type: 'email', ref: 'email', className: 'validate' }),
-                                    React.createElement(
-                                        'label',
-                                        { htmlFor: 'email' },
-                                        'Username'
-                                    )
-                                )
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'row' },
-                                React.createElement(
-                                    'div',
-                                    { className: 'input-field col s12' },
-                                    React.createElement('input', { id: 'password', type: 'password', ref: 'password', className: 'validate' }),
-                                    React.createElement(
-                                        'label',
-                                        { htmlFor: 'password' },
-                                        'Password'
-                                    )
-                                )
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'modal-footer' },
-                                React.createElement(
-                                    'a',
-                                    { href: '#!', className: ' modal-action modal-close waves-effect waves-red btn-flat' },
-                                    'Cancel'
-                                ),
-                                React.createElement(
-                                    'button',
-                                    { className: 'btn waves-effect waves-light', type: 'submit', name: 'action' },
-                                    'Login'
-                                )
-                            )
-                        )
-                    )
-                )
-            )
-        );
-    },
-    onLogin: function onLogin(e) {
-        var _this = this;
+	getInitialState: function getInitialState() {
+		return {
+			error: null
+		};
+	},
+	componentWillMount: function componentWillMount() {
+		$(document).ready(function () {
+			$('.modal-trigger').leanModal();
+		});
+	},
+	render: function render() {
+		var adminLink = React.createElement(
+			'a',
+			{ className: 'grey-text text-lighten-4 right modal-trigger', href: '#modal1' },
+			'Admin'
+		);
+		if (window.location.hash === '#dashboard') {
+			dashLogin = React.createElement(
+				'a',
+				{ className: 'grey-text text-lighten-4 right modal-trigger', href: '#modal1' },
+				'Logout'
+			);
+		}
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(
+				'div',
+				{ className: 'container' },
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col l6 s12' },
+						React.createElement(
+							'h5',
+							{ className: 'white-text' },
+							'Footer Content'
+						),
+						React.createElement(
+							'p',
+							{ className: 'grey-text text-lighten-4' },
+							'You can use rows and columns here to organize your footer content.'
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'col l4 offset-l2 s12' },
+						React.createElement(
+							'h5',
+							{ className: 'white-text' },
+							'Links'
+						),
+						React.createElement(
+							'ul',
+							null,
+							React.createElement(
+								'li',
+								null,
+								React.createElement(
+									'a',
+									{ className: 'grey-text text-lighten-3', href: 'https://dfwarmcare.teamapp.com/', target: 'blank' },
+									'DFW ArmCare on TeamApp'
+								)
+							),
+							React.createElement(
+								'li',
+								null,
+								React.createElement(
+									'a',
+									{ className: 'grey-text text-lighten-3', href: '#!' },
+									'Link 2'
+								)
+							)
+						)
+					)
+				)
+			),
+			React.createElement(
+				'div',
+				{ className: 'footer-copyright' },
+				React.createElement(
+					'div',
+					{ className: 'container' },
+					React.createElement(
+						'a',
+						{ className: 'grey-text text-lighten-4 left', href: 'http://www.josiahgallen.com', target: 'blank' },
+						'Built by Josiah Allen'
+					),
+					adminLink
+				)
+			),
+			React.createElement(
+				'div',
+				{ id: 'modal1', className: 'modal' },
+				React.createElement(
+					'div',
+					{ className: 'modal-content' },
+					React.createElement(
+						'h4',
+						null,
+						'Admin Login'
+					),
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'form',
+							{ onSubmit: this.onLogin, className: 'col s12' },
+							React.createElement(
+								'div',
+								{ className: 'row' },
+								React.createElement(
+									'div',
+									{ className: 'input-field col s12' },
+									React.createElement('input', { id: 'email', type: 'email', ref: 'email', className: 'validate' }),
+									React.createElement(
+										'label',
+										{ htmlFor: 'email' },
+										'Username'
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'row' },
+								React.createElement(
+									'div',
+									{ className: 'input-field col s12' },
+									React.createElement('input', { id: 'password', type: 'password', ref: 'password', className: 'validate' }),
+									React.createElement(
+										'label',
+										{ htmlFor: 'password' },
+										'Password'
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'modal-footer' },
+								React.createElement(
+									'a',
+									{ href: '#!', className: ' modal-action modal-close waves-effect waves-red btn-flat' },
+									'Cancel'
+								),
+								React.createElement(
+									'button',
+									{ className: 'btn waves-effect waves-light', type: 'submit', name: 'action' },
+									'Login'
+								)
+							)
+						)
+					)
+				)
+			)
+		);
+	},
+	onLogin: function onLogin(e) {
+		var _this = this;
 
-        e.preventDefault();
-        console.log('hello');
-        Parse.User.logIn(this.refs.email.value, this.refs.password.value, {
-            success: function success(u) {
-                _this.props.router.navigate('dashboard', { trigger: true });
-                $('#modal1').closeModal();
-            },
-            error: function error(u, _error) {
-                _this.setState({
-                    error: _error.message
-                });
-            }
-        });
-    }
+		e.preventDefault();
+		Parse.User.logIn(this.refs.email.value, this.refs.password.value, {
+			success: function success(u) {
+				_this.props.router.navigate('dashboard', { trigger: true });
+				$('#modal1').closeModal();
+			},
+			error: function error(u, _error) {
+				_this.setState({
+					error: _error.message
+				});
+			}
+		});
+	}
 });
 
 },{"react":161}],165:[function(require,module,exports){

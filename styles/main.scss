@@ -34,6 +34,10 @@ footer.page-footer {
 	background-color: $armCareRed;
 }
 
+.collapsible-header {
+	background-color: $armcareNavy;
+	color: white;
+}
 
 .input-field input[type=email]:focus + label {
 	color: $armcareNavy;

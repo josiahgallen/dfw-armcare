@@ -23,6 +23,10 @@ footer.page-footer {
   margin-top: 0;
   background-color: #F21217; }
 
+.collapsible-header {
+  background-color: #03225E;
+  color: white; }
+
 .input-field input[type=email]:focus + label {
   color: #03225E; }
 
