@@ -31784,171 +31784,192 @@ module.exports = React.createClass({
 var React = require('react');
 
 module.exports = React.createClass({
-  displayName: 'exports',
+    displayName: 'exports',
 
-  componentWillMount: function componentWillMount() {
-    $(document).ready(function () {
-      $('.modal-trigger').leanModal();
-    });
-  },
-  render: function render() {
-    return React.createElement(
-      'div',
-      null,
-      React.createElement(
-        'div',
-        { className: 'container' },
-        React.createElement(
-          'div',
-          { className: 'row' },
-          React.createElement(
+    getInitialState: function getInitialState() {
+        return {
+            error: null
+        };
+    },
+    componentWillMount: function componentWillMount() {
+        $(document).ready(function () {
+            $('.modal-trigger').leanModal();
+        });
+    },
+    render: function render() {
+        return React.createElement(
             'div',
-            { className: 'col l6 s12' },
-            React.createElement(
-              'h5',
-              { className: 'white-text' },
-              'Footer Content'
-            ),
-            React.createElement(
-              'p',
-              { className: 'grey-text text-lighten-4' },
-              'You can use rows and columns here to organize your footer content.'
-            )
-          ),
-          React.createElement(
-            'div',
-            { className: 'col l4 offset-l2 s12' },
-            React.createElement(
-              'h5',
-              { className: 'white-text' },
-              'Links'
-            ),
-            React.createElement(
-              'ul',
-              null,
-              React.createElement(
-                'li',
-                null,
-                React.createElement(
-                  'a',
-                  { className: 'grey-text text-lighten-3', href: 'https://dfwarmcare.teamapp.com/', target: 'blank' },
-                  'DFW ArmCare on TeamApp'
-                )
-              ),
-              React.createElement(
-                'li',
-                null,
-                React.createElement(
-                  'a',
-                  { className: 'grey-text text-lighten-3', href: '#!' },
-                  'Link 2'
-                )
-              ),
-              React.createElement(
-                'li',
-                null,
-                React.createElement(
-                  'a',
-                  { className: 'grey-text text-lighten-3', href: '#!' },
-                  'Link 3'
-                )
-              ),
-              React.createElement(
-                'li',
-                null,
-                React.createElement(
-                  'a',
-                  { className: 'grey-text text-lighten-3', href: '#!' },
-                  'Link 4'
-                )
-              )
-            )
-          )
-        )
-      ),
-      React.createElement(
-        'div',
-        { className: 'footer-copyright' },
-        React.createElement(
-          'div',
-          { className: 'container' },
-          React.createElement(
-            'a',
-            { className: 'grey-text text-lighten-4 left', href: 'http://www.josiahgallen.com', target: 'blank' },
-            'Built by Josiah Allen'
-          ),
-          React.createElement(
-            'a',
-            { className: 'grey-text text-lighten-4 right modal-trigger', href: '#modal1' },
-            'Admin'
-          )
-        )
-      ),
-      React.createElement(
-        'div',
-        { id: 'modal1', className: 'modal' },
-        React.createElement(
-          'div',
-          { className: 'modal-content' },
-          React.createElement(
-            'h4',
             null,
-            'Admin Login'
-          ),
-          React.createElement(
-            'div',
-            { className: 'row' },
             React.createElement(
-              'form',
-              { className: 'col s12' },
-              React.createElement(
                 'div',
-                { className: 'row' },
+                { className: 'container' },
                 React.createElement(
-                  'div',
-                  { className: 'input-field col s12' },
-                  React.createElement('input', { id: 'email', type: 'email', className: 'validate' }),
-                  React.createElement(
-                    'label',
-                    { htmlFor: 'email' },
-                    'Username'
-                  )
+                    'div',
+                    { className: 'row' },
+                    React.createElement(
+                        'div',
+                        { className: 'col l6 s12' },
+                        React.createElement(
+                            'h5',
+                            { className: 'white-text' },
+                            'Footer Content'
+                        ),
+                        React.createElement(
+                            'p',
+                            { className: 'grey-text text-lighten-4' },
+                            'You can use rows and columns here to organize your footer content.'
+                        )
+                    ),
+                    React.createElement(
+                        'div',
+                        { className: 'col l4 offset-l2 s12' },
+                        React.createElement(
+                            'h5',
+                            { className: 'white-text' },
+                            'Links'
+                        ),
+                        React.createElement(
+                            'ul',
+                            null,
+                            React.createElement(
+                                'li',
+                                null,
+                                React.createElement(
+                                    'a',
+                                    { className: 'grey-text text-lighten-3', href: 'https://dfwarmcare.teamapp.com/', target: 'blank' },
+                                    'DFW ArmCare on TeamApp'
+                                )
+                            ),
+                            React.createElement(
+                                'li',
+                                null,
+                                React.createElement(
+                                    'a',
+                                    { className: 'grey-text text-lighten-3', href: '#!' },
+                                    'Link 2'
+                                )
+                            ),
+                            React.createElement(
+                                'li',
+                                null,
+                                React.createElement(
+                                    'a',
+                                    { className: 'grey-text text-lighten-3', href: '#!' },
+                                    'Link 3'
+                                )
+                            ),
+                            React.createElement(
+                                'li',
+                                null,
+                                React.createElement(
+                                    'a',
+                                    { className: 'grey-text text-lighten-3', href: '#!' },
+                                    'Link 4'
+                                )
+                            )
+                        )
+                    )
                 )
-              ),
-              React.createElement(
+            ),
+            React.createElement(
                 'div',
-                { className: 'row' },
+                { className: 'footer-copyright' },
                 React.createElement(
-                  'div',
-                  { className: 'input-field col s12' },
-                  React.createElement('input', { id: 'password', type: 'password', className: 'validate' }),
-                  React.createElement(
-                    'label',
-                    { htmlFor: 'password' },
-                    'Password'
-                  )
+                    'div',
+                    { className: 'container' },
+                    React.createElement(
+                        'a',
+                        { className: 'grey-text text-lighten-4 left', href: 'http://www.josiahgallen.com', target: 'blank' },
+                        'Built by Josiah Allen'
+                    ),
+                    React.createElement(
+                        'a',
+                        { className: 'grey-text text-lighten-4 right modal-trigger', href: '#modal1' },
+                        'Admin'
+                    )
                 )
-              )
+            ),
+            React.createElement(
+                'div',
+                { id: 'modal1', className: 'modal' },
+                React.createElement(
+                    'div',
+                    { className: 'modal-content' },
+                    React.createElement(
+                        'h4',
+                        null,
+                        'Admin Login'
+                    ),
+                    React.createElement(
+                        'div',
+                        { className: 'row' },
+                        React.createElement(
+                            'form',
+                            { onSubmit: this.onLogin, className: 'col s12' },
+                            React.createElement(
+                                'div',
+                                { className: 'row' },
+                                React.createElement(
+                                    'div',
+                                    { className: 'input-field col s12' },
+                                    React.createElement('input', { id: 'email', type: 'email', ref: 'email', className: 'validate' }),
+                                    React.createElement(
+                                        'label',
+                                        { htmlFor: 'email' },
+                                        'Username'
+                                    )
+                                )
+                            ),
+                            React.createElement(
+                                'div',
+                                { className: 'row' },
+                                React.createElement(
+                                    'div',
+                                    { className: 'input-field col s12' },
+                                    React.createElement('input', { id: 'password', type: 'password', ref: 'password', className: 'validate' }),
+                                    React.createElement(
+                                        'label',
+                                        { htmlFor: 'password' },
+                                        'Password'
+                                    )
+                                )
+                            ),
+                            React.createElement(
+                                'div',
+                                { className: 'modal-footer' },
+                                React.createElement(
+                                    'a',
+                                    { href: '#!', className: ' modal-action modal-close waves-effect waves-red btn-flat' },
+                                    'Cancel'
+                                ),
+                                React.createElement(
+                                    'button',
+                                    { className: 'btn waves-effect waves-light', type: 'submit', name: 'action' },
+                                    'Login'
+                                )
+                            )
+                        )
+                    )
+                )
             )
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'modal-footer' },
-          React.createElement(
-            'a',
-            { href: '#!', className: ' modal-action modal-close waves-effect waves-red btn-flat' },
-            'Cancel'
-          ),
-          React.createElement(
-            'a',
-            { href: '#!', className: ' modal-action modal-close waves-effect waves-green btn-flat' },
-            'Login'
-          )
-        )
-      )
-    );
-  }
+        );
+    },
+    onLogin: function onLogin(e) {
+        var _this = this;
+
+        e.preventDefault();
+        console.log('hello');
+        Parse.User.logIn(this.refs.email.value, this.refs.password.value, {
+            success: function success(u) {
+                _this.props.router.navigate('dashboard', { trigger: true });
+            },
+            error: function error(u, _error) {
+                _this.setState({
+                    error: _error.message
+                });
+            }
+        });
+    }
 });
 
 },{"react":161}],165:[function(require,module,exports){

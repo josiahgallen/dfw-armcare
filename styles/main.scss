@@ -1,5 +1,6 @@
 $armCareRed: #F21217;
 $armcareNavy: #03225E;
+$buttonColor: #1F74EF;
 
 body {
     display: flex;
@@ -50,4 +51,12 @@ footer.page-footer {
 .input-field input[type=password]:focus {
 	border-bottom: 1px solid $armcareNavy;
 	box-shadow: 0 1px 0 0 $armcareNavy;
+}
+
+.btn, .btn-large {
+	background-color: $buttonColor;
+}
+
+.btn:hover, .btn-large:hover {
+	background-color: $armcareNavy;
 }
