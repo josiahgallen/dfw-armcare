@@ -26,8 +26,6 @@ module.exports = React.createClass({
             	    		<ul>
             	      			<li><a className="grey-text text-lighten-3" href="https://dfwarmcare.teamapp.com/" target="blank">DFW ArmCare on TeamApp</a></li>
             	      			<li><a className="grey-text text-lighten-3" href="#!">Link 2</a></li>
-            	      			<li><a className="grey-text text-lighten-3" href="#!">Link 3</a></li>
-            	      			<li><a className="grey-text text-lighten-3" href="#!">Link 4</a></li>
             	    		</ul>
             	  		</div>
             		</div>
@@ -75,6 +73,7 @@ module.exports = React.createClass({
             {
                 success: (u) => {
                     this.props.router.navigate('dashboard', {trigger: true})
+                    $('#modal1').closeModal();
                 },
                 error: (u, error) => {
                     this.setState({

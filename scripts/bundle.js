@@ -31744,19 +31744,96 @@ module.exports = require('./lib/React');
 var React = require('react');
 
 module.exports = React.createClass({
-	displayName: 'exports',
+  displayName: 'exports',
 
-	render: function render() {
-		return React.createElement(
-			'div',
-			null,
-			React.createElement(
-				'h1',
-				null,
-				'dashboard'
-			)
-		);
-	}
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'h1',
+        null,
+        'Admin Tools'
+      ),
+      React.createElement(
+        'div',
+        { className: 'container' },
+        React.createElement(
+          'ul',
+          { className: 'collapsible popout', 'data-collapsible': 'accordion' },
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'div',
+              { className: 'collapsible-header' },
+              React.createElement(
+                'i',
+                { className: 'material-icons' },
+                'video_library'
+              ),
+              'Manage Video Access'
+            ),
+            React.createElement(
+              'div',
+              { className: 'collapsible-body' },
+              React.createElement(
+                'p',
+                null,
+                'Lorem ipsum dolor sit amet.'
+              )
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'div',
+              { className: 'collapsible-header' },
+              React.createElement(
+                'i',
+                { className: 'material-icons' },
+                'place'
+              ),
+              'Second'
+            ),
+            React.createElement(
+              'div',
+              { className: 'collapsible-body' },
+              React.createElement(
+                'p',
+                null,
+                'Lorem ipsum dolor sit amet.'
+              )
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'div',
+              { className: 'collapsible-header' },
+              React.createElement(
+                'i',
+                { className: 'material-icons' },
+                'whatshot'
+              ),
+              'Third'
+            ),
+            React.createElement(
+              'div',
+              { className: 'collapsible-body' },
+              React.createElement(
+                'p',
+                null,
+                'Lorem ipsum dolor sit amet.'
+              )
+            )
+          )
+        )
+      )
+    );
+  }
 });
 
 },{"react":161}],163:[function(require,module,exports){
@@ -31847,24 +31924,6 @@ module.exports = React.createClass({
                                     'a',
                                     { className: 'grey-text text-lighten-3', href: '#!' },
                                     'Link 2'
-                                )
-                            ),
-                            React.createElement(
-                                'li',
-                                null,
-                                React.createElement(
-                                    'a',
-                                    { className: 'grey-text text-lighten-3', href: '#!' },
-                                    'Link 3'
-                                )
-                            ),
-                            React.createElement(
-                                'li',
-                                null,
-                                React.createElement(
-                                    'a',
-                                    { className: 'grey-text text-lighten-3', href: '#!' },
-                                    'Link 4'
                                 )
                             )
                         )
@@ -31962,6 +32021,7 @@ module.exports = React.createClass({
         Parse.User.logIn(this.refs.email.value, this.refs.password.value, {
             success: function success(u) {
                 _this.props.router.navigate('dashboard', { trigger: true });
+                $('#modal1').closeModal();
             },
             error: function error(u, _error) {
                 _this.setState({
