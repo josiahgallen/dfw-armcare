@@ -1,6 +1,16 @@
 $armCareRed: #F21217;
 $armcareNavy: #03225E;
 
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 .navLogo {
 	height: 1.5em;
 	margin-top: .25em;
@@ -8,6 +18,10 @@ $armcareNavy: #03225E;
 
 nav {
 	background-color: $armCareRed;
+}
+
+h1 {
+	text-align: center;
 }
 
 h4 {

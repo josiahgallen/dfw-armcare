@@ -31753,13 +31753,33 @@ module.exports = React.createClass({
 			React.createElement(
 				'h1',
 				null,
-				'Schedule'
+				'dashboard'
 			)
 		);
 	}
 });
 
 },{"react":161}],163:[function(require,module,exports){
+'use strict';
+var React = require('react');
+
+module.exports = React.createClass({
+	displayName: 'exports',
+
+	render: function render() {
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(
+				'h1',
+				null,
+				'Schedule'
+			)
+		);
+	}
+});
+
+},{"react":161}],164:[function(require,module,exports){
 'use strict';
 var React = require('react');
 
@@ -31931,7 +31951,7 @@ module.exports = React.createClass({
   }
 });
 
-},{"react":161}],164:[function(require,module,exports){
+},{"react":161}],165:[function(require,module,exports){
 'use strict';
 var React = require('react');
 
@@ -31987,7 +32007,7 @@ module.exports = React.createClass({
 	}
 });
 
-},{"react":161}],165:[function(require,module,exports){
+},{"react":161}],166:[function(require,module,exports){
 'use strict';
 var React = require('react');
 
@@ -32065,7 +32085,27 @@ module.exports = React.createClass({
 	}
 });
 
-},{"react":161}],166:[function(require,module,exports){
+},{"react":161}],167:[function(require,module,exports){
+'use strict';
+var React = require('react');
+
+module.exports = React.createClass({
+	displayName: 'exports',
+
+	render: function render() {
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(
+				'h1',
+				null,
+				'Access Restricted, contact your system administrator'
+			)
+		);
+	}
+});
+
+},{"react":161}],168:[function(require,module,exports){
 'use strict';
 var React = require('react');
 
@@ -32094,7 +32134,7 @@ module.exports = React.createClass({
 	}
 });
 
-},{"react":161}],167:[function(require,module,exports){
+},{"react":161}],169:[function(require,module,exports){
 'use strict';
 var React = require('react');
 var ReactDOM = require('react-dom');
@@ -32107,12 +32147,17 @@ var NavComponent = require('./components/NavComponent');
 var FooterComponent = require('./components/FooterComponent');
 var EventsPageComponent = require('./components/EventsPageComponent');
 var VideosPageComponent = require('./components/VideosPageComponent');
+var DashboardPageComponent = require('./components/DashboardPageComponent');
+var RestrictedPageComponent = require('./components/RestrictedPageComponent');
+
+Parse.initialize('FdjuLKZGlTOdxpJZebqpifMqJfQx6aDiosHENFN9', '3Ed6iImw6QDDJNnomGLtb3NZZ99wbSAxeb2ZBQo9');
 
 var Router = Backbone.Router.extend({
 	routes: {
 		'': 'home',
 		'calendar': 'events',
-		'videos': 'videos'
+		'videos': 'videos',
+		'dashboard': 'dashboard'
 	},
 	home: function home() {
 		ReactDOM.render(React.createElement(HomePageComponent, { router: r }), document.getElementById('app'));
@@ -32122,6 +32167,14 @@ var Router = Backbone.Router.extend({
 	},
 	videos: function videos() {
 		ReactDOM.render(React.createElement(VideosPageComponent, { router: r }), document.getElementById('app'));
+	},
+	dashboard: function dashboard() {
+		var currentUser = Parse.User.current();
+		if (currentUser) {
+			ReactDOM.render(React.createElement(DashboardPageComponent, { router: r }), document.getElementById('app'));
+		} else {
+			ReactDOM.render(React.createElement(RestrictedPageComponent, { router: r }), document.getElementById('app'));
+		}
 	}
 });
 
@@ -32131,7 +32184,7 @@ Backbone.history.start();
 ReactDOM.render(React.createElement(NavComponent, { router: r }), document.getElementById('nav'));
 ReactDOM.render(React.createElement(FooterComponent, { router: r }), document.getElementById('footer'));
 
-},{"./components/EventsPageComponent":162,"./components/FooterComponent":163,"./components/HomePageComponent":164,"./components/NavComponent":165,"./components/VideosPageComponent":166,"backbone":1,"jquery":4,"react":161,"react-dom":5}]},{},[167])
+},{"./components/DashboardPageComponent":162,"./components/EventsPageComponent":163,"./components/FooterComponent":164,"./components/HomePageComponent":165,"./components/NavComponent":166,"./components/RestrictedPageComponent":167,"./components/VideosPageComponent":168,"backbone":1,"jquery":4,"react":161,"react-dom":5}]},{},[169])
 
 
 //# sourceMappingURL=bundle.js.map

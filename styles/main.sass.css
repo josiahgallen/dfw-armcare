@@ -1,9 +1,20 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+main {
+  flex: 1 0 auto; }
+
 .navLogo {
   height: 1.5em;
   margin-top: .25em; }
 
 nav {
   background-color: #F21217; }
+
+h1 {
+  text-align: center; }
 
 h4 {
   text-align: center; }
