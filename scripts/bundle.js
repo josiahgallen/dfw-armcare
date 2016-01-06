@@ -31766,6 +31766,11 @@ var React = require('react');
 module.exports = React.createClass({
   displayName: 'exports',
 
+  componentWillMount: function componentWillMount() {
+    $(document).ready(function () {
+      $('.modal-trigger').leanModal();
+    });
+  },
   render: function render() {
     return React.createElement(
       'div',
@@ -31850,12 +31855,75 @@ module.exports = React.createClass({
           React.createElement(
             'a',
             { className: 'grey-text text-lighten-4 left', href: 'http://www.josiahgallen.com', target: 'blank' },
-            'Site built by Josiah Allen'
+            'Built by Josiah Allen'
           ),
           React.createElement(
             'a',
-            { className: 'grey-text text-lighten-4 right', href: '#admin' },
+            { className: 'grey-text text-lighten-4 right modal-trigger', href: '#modal1' },
             'Admin'
+          )
+        )
+      ),
+      React.createElement(
+        'div',
+        { id: 'modal1', className: 'modal' },
+        React.createElement(
+          'div',
+          { className: 'modal-content' },
+          React.createElement(
+            'h4',
+            null,
+            'Admin Login'
+          ),
+          React.createElement(
+            'div',
+            { className: 'row' },
+            React.createElement(
+              'form',
+              { className: 'col s12' },
+              React.createElement(
+                'div',
+                { className: 'row' },
+                React.createElement(
+                  'div',
+                  { className: 'input-field col s12' },
+                  React.createElement('input', { id: 'email', type: 'email', className: 'validate' }),
+                  React.createElement(
+                    'label',
+                    { htmlFor: 'email' },
+                    'Username'
+                  )
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'row' },
+                React.createElement(
+                  'div',
+                  { className: 'input-field col s12' },
+                  React.createElement('input', { id: 'password', type: 'password', className: 'validate' }),
+                  React.createElement(
+                    'label',
+                    { htmlFor: 'password' },
+                    'Password'
+                  )
+                )
+              )
+            )
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'modal-footer' },
+          React.createElement(
+            'a',
+            { href: '#!', className: ' modal-action modal-close waves-effect waves-red btn-flat' },
+            'Cancel'
+          ),
+          React.createElement(
+            'a',
+            { href: '#!', className: ' modal-action modal-close waves-effect waves-green btn-flat' },
+            'Login'
           )
         )
       )

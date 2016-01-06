@@ -11,3 +11,17 @@ h4 {
 footer.page-footer {
   margin-top: 0;
   background-color: #F21217; }
+
+.input-field input[type=email]:focus + label {
+  color: #03225E; }
+
+.input-field input[type=email]:focus {
+  border-bottom: 1px solid #03225E;
+  box-shadow: 0 1px 0 0 #03225E; }
+
+.input-field input[type=password]:focus + label {
+  color: #03225E; }
+
+.input-field input[type=password]:focus {
+  border-bottom: 1px solid #03225E;
+  box-shadow: 0 1px 0 0 #03225E; }

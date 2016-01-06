@@ -2,6 +2,11 @@
 var React = require('react');
 
 module.exports = React.createClass({
+	componentWillMount: function() {
+		$(document).ready(function(){
+    		$('.modal-trigger').leanModal();
+  		});
+	},
 	render: function() {
 		return (
 			<div>
@@ -24,10 +29,35 @@ module.exports = React.createClass({
           		</div>
           		<div className="footer-copyright">
             		<div className="container">
-            			<a className="grey-text text-lighten-4 left" href="http://www.josiahgallen.com" target="blank">Site built by Josiah Allen</a>
-            			<a className="grey-text text-lighten-4 right" href="#admin">Admin</a>
+            			<a className="grey-text text-lighten-4 left" href="http://www.josiahgallen.com" target="blank">Built by Josiah Allen</a>
+            			<a className="grey-text text-lighten-4 right modal-trigger" href="#modal1">Admin</a>
             		</div>
           		</div>
+  				<div id="modal1" className="modal">
+  				  	<div className="modal-content">
+  				    	<h4>Admin Login</h4>
+  				    	<div className="row">
+    						<form className="col s12">
+    							<div className="row">
+        							<div className="input-field col s12">
+          								<input id="email" type="email" className="validate"/>
+          								<label htmlFor="email">Username</label>
+        							</div>
+      							</div>
+      							<div className="row">
+      							  	<div className="input-field col s12">
+      							    	<input id="password" type="password" className="validate"/>
+      							    	<label htmlFor="password">Password</label>
+      							  	</div>
+      							</div>
+    						</form>
+    					</div>
+  				  	</div>
+  				  	<div className="modal-footer">
+  				  		<a href="#!" className=" modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
+  				    	<a href="#!" className=" modal-action modal-close waves-effect waves-green btn-flat">Login</a>
+  				  	</div>
+  				</div>
 			</div>
 		)
 	}
