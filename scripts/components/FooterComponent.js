@@ -8,14 +8,17 @@ module.exports = React.createClass({
 		};
 	},
 	componentWillMount: function() {
-		$(document).ready(function(){
+		$(document).ready(() => {
 			$('.modal-trigger').leanModal();
+			this.props.router.on('route', () => {
+				this.forceUpdate();
+			});
 		});
 	},
 	render: function() {
 		var adminLink = (<a className="grey-text text-lighten-4 right modal-trigger" href="#modal1">Admin</a>);
 		if(window.location.hash === '#dashboard') {
-			dashLogin = (<a className="grey-text text-lighten-4 right modal-trigger" href="#modal1">Logout</a>)
+			adminLink = (<a onClick={this.logout} className="grey-text text-lighten-4 right" href="#">Logout</a>)
 		}
 		return (
 			<div>
@@ -85,5 +88,11 @@ module.exports = React.createClass({
 				}
 			}
 		);
+	},
+	onLogout: function(e) {
+		e.preventDefault();
+		Parse.User.logOut();
+		this.props.router.navigate('', {trigger: true})
+		console.log('logged out');
 	}
 })

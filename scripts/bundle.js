@@ -31851,8 +31851,13 @@ module.exports = React.createClass({
 		};
 	},
 	componentWillMount: function componentWillMount() {
+		var _this = this;
+
 		$(document).ready(function () {
 			$('.modal-trigger').leanModal();
+			_this.props.router.on('route', function () {
+				_this.forceUpdate();
+			});
 		});
 	},
 	render: function render() {
@@ -31862,9 +31867,9 @@ module.exports = React.createClass({
 			'Admin'
 		);
 		if (window.location.hash === '#dashboard') {
-			dashLogin = React.createElement(
+			adminLink = React.createElement(
 				'a',
-				{ className: 'grey-text text-lighten-4 right modal-trigger', href: '#modal1' },
+				{ onClick: this.logout, className: 'grey-text text-lighten-4 right', href: '#' },
 				'Logout'
 			);
 		}
@@ -32004,20 +32009,26 @@ module.exports = React.createClass({
 		);
 	},
 	onLogin: function onLogin(e) {
-		var _this = this;
+		var _this2 = this;
 
 		e.preventDefault();
 		Parse.User.logIn(this.refs.email.value, this.refs.password.value, {
 			success: function success(u) {
-				_this.props.router.navigate('dashboard', { trigger: true });
+				_this2.props.router.navigate('dashboard', { trigger: true });
 				$('#modal1').closeModal();
 			},
 			error: function error(u, _error) {
-				_this.setState({
+				_this2.setState({
 					error: _error.message
 				});
 			}
 		});
+	},
+	onLogout: function onLogout(e) {
+		e.preventDefault();
+		Parse.User.logOut();
+		this.props.router.navigate('', { trigger: true });
+		console.log('logged out');
 	}
 });
 
