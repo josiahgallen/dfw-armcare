@@ -31746,12 +31746,18 @@ var React = require('react');
 module.exports = React.createClass({
 	displayName: 'exports',
 
+	getInitialState: function getInitialState() {
+		return {
+			oldPass: Parse.User.current().get('videoAccess')
+		};
+	},
 	componentDidMount: function componentDidMount() {
 		$(document).ready(function () {
 			$('.collapsible').collapsible();
 		});
 	},
 	render: function render() {
+		console.log(Parse.User.current().get('videoAccess'));
 		return React.createElement(
 			'div',
 			null,
@@ -31806,15 +31812,82 @@ module.exports = React.createClass({
 							'div',
 							{ className: 'collapsible-body' },
 							React.createElement(
-								'p',
-								null,
-								'Lorem ipsum dolor sit amet.'
+								'div',
+								{ className: 'row' },
+								React.createElement(
+									'form',
+									{ className: 'col s12' },
+									React.createElement(
+										'div',
+										{ className: 'container' },
+										React.createElement(
+											'div',
+											{ className: 'row' },
+											React.createElement(
+												'div',
+												{ className: 'input-field col s6' },
+												React.createElement('input', { value: 'test', id: 'icon_prefix', type: 'text', className: 'validate', ref: 'oldPass' }),
+												React.createElement(
+													'label',
+													{ htmlFor: 'icon_prefix' },
+													'Old Password'
+												)
+											)
+										),
+										React.createElement(
+											'div',
+											{ className: 'row' },
+											React.createElement(
+												'div',
+												{ className: 'input-field col s6' },
+												React.createElement('input', { id: 'icon_telephone', type: 'text', className: 'validate', ref: 'newPass' }),
+												React.createElement(
+													'label',
+													{ htmlFor: 'icon_telephone' },
+													'New Password'
+												)
+											),
+											React.createElement(
+												'div',
+												{ className: 'input-field col s6' },
+												React.createElement('input', { id: 'icon_telephone', type: 'text', className: 'validate', ref: 'confirmNew' }),
+												React.createElement(
+													'label',
+													{ htmlFor: 'icon_telephone' },
+													'Confirm New Password'
+												)
+											)
+										),
+										React.createElement(
+											'div',
+											{ className: 'row' },
+											React.createElement(
+												'a',
+												{ href: '#!', onClick: this.onCancel, className: 'right waves-effect waves-red btn-flat' },
+												'Cancel'
+											),
+											React.createElement(
+												'button',
+												{ className: 'right btn waves-effect waves-light', type: 'submit', name: 'action' },
+												'Submit'
+											)
+										)
+									)
+								)
 							)
 						)
 					)
 				)
 			)
 		);
+	},
+	onCancel: function onCancel() {
+		this.refs.oldPass.value = '';
+		this.refs.newPass.value = '';
+		this.refs.confirmNew.value = '';
+	},
+	onSubmit: function onSubmit(e) {
+		e.preventDefault();
 	}
 });
 

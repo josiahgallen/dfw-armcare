@@ -27,6 +27,13 @@ footer.page-footer {
   background-color: #03225E;
   color: white; }
 
+.input-field input[type=text]:focus + label {
+  color: #03225E; }
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #03225E;
+  box-shadow: 0 1px 0 0 #03225E; }
+
 .input-field input[type=email]:focus + label {
   color: #03225E; }
 
