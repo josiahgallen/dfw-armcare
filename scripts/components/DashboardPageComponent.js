@@ -13,7 +13,6 @@ module.exports = React.createClass({
 		});
 	},
 	render: function() {
-		console.log(Parse.User.current().get('videoAccess'));
 		return (
 			<div>
 				<h1>Admin Tools</h1>
@@ -27,11 +26,11 @@ module.exports = React.createClass({
 							<div className="collapsible-header"><i className="material-icons">video_library</i>Manage Video Access</div>
 							<div className="collapsible-body">
 								<div className="row">
-									<form className="col s12">
+									<form onSubmit={this.updatePassword} className="col s12">
 										<div className="container">
 											<div className="row">
 												<div className="input-field col s6">
-													<input value="test" id="icon_prefix" type="text" className="validate" ref="oldPass"/>
+													<input id="icon_prefix" type="text" className="validate" ref="oldPass"/>
 													<label htmlFor="icon_prefix">Old Password</label>
 												</div>
 											</div>
@@ -64,8 +63,21 @@ module.exports = React.createClass({
 		this.refs.newPass.value = '';
 		this.refs.confirmNew.value = '';
 	},
-	onSubmit: function(e) {
+	updatePassword: function(e) {
 		e.preventDefault();
-
+		if(this.refs.oldPass.value === Parse.User.current().get('videoAccess') && this.refs.newPass.value === this.refs.confirmNew.value && this.refs.newPass.value.length > 6) {
+			console.log('try');
+			Parse.User.current().save({
+				videoAccess: this.refs.newPass.value
+			},
+			{
+				success: (password) => {
+					console.log(password, ' updated');
+				},
+				error: (password, error) => {
+					console.log(error);
+				}
+			});
+		}
 	}
 })

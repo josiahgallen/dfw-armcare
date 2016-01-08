@@ -31757,7 +31757,6 @@ module.exports = React.createClass({
 		});
 	},
 	render: function render() {
-		console.log(Parse.User.current().get('videoAccess'));
 		return React.createElement(
 			'div',
 			null,
@@ -31816,7 +31815,7 @@ module.exports = React.createClass({
 								{ className: 'row' },
 								React.createElement(
 									'form',
-									{ className: 'col s12' },
+									{ onSubmit: this.updatePassword, className: 'col s12' },
 									React.createElement(
 										'div',
 										{ className: 'container' },
@@ -31826,7 +31825,7 @@ module.exports = React.createClass({
 											React.createElement(
 												'div',
 												{ className: 'input-field col s6' },
-												React.createElement('input', { value: 'test', id: 'icon_prefix', type: 'text', className: 'validate', ref: 'oldPass' }),
+												React.createElement('input', { id: 'icon_prefix', type: 'text', className: 'validate', ref: 'oldPass' }),
 												React.createElement(
 													'label',
 													{ htmlFor: 'icon_prefix' },
@@ -31886,8 +31885,21 @@ module.exports = React.createClass({
 		this.refs.newPass.value = '';
 		this.refs.confirmNew.value = '';
 	},
-	onSubmit: function onSubmit(e) {
+	updatePassword: function updatePassword(e) {
 		e.preventDefault();
+		if (this.refs.oldPass.value === Parse.User.current().get('videoAccess') && this.refs.newPass.value === this.refs.confirmNew.value && this.refs.newPass.value.length > 6) {
+			console.log('try');
+			Parse.User.current().save({
+				videoAccess: this.refs.newPass.value
+			}, {
+				success: function success(password) {
+					console.log(password, ' updated');
+				},
+				error: function error(password, _error) {
+					console.log(_error);
+				}
+			});
+		}
 	}
 });
 
