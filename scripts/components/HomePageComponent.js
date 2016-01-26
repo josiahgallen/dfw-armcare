@@ -8,6 +8,7 @@ module.exports = React.createClass({
 		});
 	},
 	render: function() {
+		console.log(Parse.User.current());
 		return (
 			<div>
 				<div className="parallax-container">

@@ -31757,6 +31757,7 @@ module.exports = React.createClass({
 		});
 	},
 	render: function render() {
+		console.log(Parse.User.current().get('videoAccess'));
 		return React.createElement(
 			'div',
 			null,
@@ -31887,18 +31888,21 @@ module.exports = React.createClass({
 	},
 	updatePassword: function updatePassword(e) {
 		e.preventDefault();
-		if (this.refs.oldPass.value === Parse.User.current().get('videoAccess') && this.refs.newPass.value === this.refs.confirmNew.value && this.refs.newPass.value.length > 6) {
-			console.log('try');
+		if (this.refs.oldPass.value === Parse.User.current().get('videoAccess') && this.refs.newPass.value === this.refs.confirmNew.value && this.refs.newPass.value.length > 7) {
 			Parse.User.current().save({
 				videoAccess: this.refs.newPass.value
 			}, {
 				success: function success(password) {
+					Materialize.toast('Video Access credentials updated.', 3000);
 					console.log(password, ' updated');
 				},
 				error: function error(password, _error) {
+					Materialize.toast('Video Access credentials updated.', 3000);
 					console.log(_error);
 				}
 			});
+		} else {
+			Materialize.toast('Incorrect password credentials', 3000);
 		}
 	}
 });
@@ -31948,7 +31952,7 @@ module.exports = React.createClass({
 	render: function render() {
 		var adminLink = React.createElement(
 			'a',
-			{ className: 'grey-text text-lighten-4 right modal-trigger', href: '#modal1' },
+			{ className: 'grey-text text-lighten-4 right modal-trigger waves-effect waves-light', href: '#modal1' },
 			'Admin'
 		);
 		if (window.location.hash === '#dashboard') {
@@ -32112,8 +32116,8 @@ module.exports = React.createClass({
 	onLogout: function onLogout(e) {
 		e.preventDefault();
 		Parse.User.logOut();
-		this.props.router.navigate('', { trigger: true });
 		console.log('logged out');
+		this.props.router.navigate('', { trigger: true });
 	}
 });
 
@@ -32130,6 +32134,7 @@ module.exports = React.createClass({
 		});
 	},
 	render: function render() {
+		console.log(Parse.User.current());
 		return React.createElement(
 			'div',
 			null,
@@ -32188,66 +32193,100 @@ module.exports = React.createClass({
 	render: function render() {
 		return React.createElement(
 			'div',
-			{ className: 'nav-wrapper' },
+			null,
 			React.createElement(
-				'a',
-				{ href: '#', className: 'brand-logo' },
-				React.createElement('img', { className: 'navLogo', src: './images/0001.jpg' })
-			),
-			React.createElement(
-				'a',
-				{ href: '#', 'data-activates': 'mobile-demo', className: 'button-collapse' },
+				'div',
+				{ className: 'nav-wrapper' },
 				React.createElement(
-					'i',
-					{ className: 'material-icons' },
-					'menu'
-				)
-			),
-			React.createElement(
-				'ul',
-				{ className: 'right hide-on-med-and-down' },
+					'a',
+					{ href: '#', className: 'brand-logo' },
+					React.createElement('img', { className: 'navLogo', src: './images/0001.jpg' })
+				),
 				React.createElement(
-					'li',
-					null,
+					'a',
+					{ href: '#', 'data-activates': 'mobile-demo', className: 'button-collapse' },
 					React.createElement(
-						'a',
-						{ href: 'https://dfwarmcare.teamapp.com/events', target: 'blank' },
-						'Calendar'
+						'i',
+						{ className: 'material-icons' },
+						'menu'
 					)
 				),
 				React.createElement(
-					'li',
-					null,
+					'ul',
+					{ className: 'right hide-on-med-and-down' },
 					React.createElement(
-						'a',
-						{ href: '#videos' },
-						'Videos'
+						'li',
+						null,
+						React.createElement(
+							'a',
+							{ href: 'https://dfwarmcare.teamapp.com/events', target: 'blank' },
+							'Calendar'
+						)
+					),
+					React.createElement(
+						'li',
+						null,
+						React.createElement(
+							'a',
+							{ className: 'modal-trigger waves-effect waves-light', href: '#videoModal' },
+							'Videos'
+						)
+					)
+				),
+				React.createElement(
+					'ul',
+					{ className: 'side-nav', id: 'mobile-demo' },
+					React.createElement(
+						'li',
+						null,
+						React.createElement(
+							'a',
+							{ href: '#calendar' },
+							'Calendar'
+						)
+					),
+					React.createElement(
+						'li',
+						null,
+						React.createElement(
+							'a',
+							{ href: '#videos' },
+							'Videos'
+						)
 					)
 				)
 			),
 			React.createElement(
-				'ul',
-				{ className: 'side-nav', id: 'mobile-demo' },
+				'div',
+				{ id: 'videoModal', className: 'modal modal-fixed-footer' },
 				React.createElement(
-					'li',
-					null,
+					'div',
+					{ className: 'modal-content' },
 					React.createElement(
-						'a',
-						{ href: '#calendar' },
-						'Calendar'
+						'h4',
+						null,
+						'Modal Header'
+					),
+					React.createElement(
+						'p',
+						null,
+						'A bunch of text'
 					)
 				),
 				React.createElement(
-					'li',
-					null,
+					'div',
+					{ className: 'modal-footer' },
 					React.createElement(
 						'a',
-						{ href: '#videos' },
-						'Videos'
+						{ href: '#!', className: 'modal-action modal-close waves-effect waves-green btn-flat ' },
+						'Agree'
 					)
 				)
 			)
 		);
+	},
+	onLogin: function onLogin() {
+		console.log('videos!');
 	}
 });
 

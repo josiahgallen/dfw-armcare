@@ -10,13 +10,13 @@ module.exports = React.createClass({
 	componentWillMount: function() {
 		$(document).ready(() => {
 			$('.modal-trigger').leanModal();
-			this.props.router.on('route', () => {
-				this.forceUpdate();
+				this.props.router.on('route', () => {
+					this.forceUpdate();
 			});
 		});
 	},
 	render: function() {
-		var adminLink = (<a className="grey-text text-lighten-4 right modal-trigger" href="#modal1">Admin</a>);
+		var adminLink = (<a className="grey-text text-lighten-4 right modal-trigger waves-effect waves-light" href="#modal1">Admin</a>);
 		if(window.location.hash === '#dashboard') {
 			adminLink = (<a onClick={this.logout} className="grey-text text-lighten-4 right" href="#">Logout</a>)
 		}
@@ -92,7 +92,7 @@ module.exports = React.createClass({
 	onLogout: function(e) {
 		e.preventDefault();
 		Parse.User.logOut();
-		this.props.router.navigate('', {trigger: true})
 		console.log('logged out');
+		this.props.router.navigate('', {trigger: true})
 	}
 })

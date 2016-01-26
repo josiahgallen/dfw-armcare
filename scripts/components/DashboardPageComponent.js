@@ -13,6 +13,7 @@ module.exports = React.createClass({
 		});
 	},
 	render: function() {
+		console.log(Parse.User.current().get('videoAccess'));
 		return (
 			<div>
 				<h1>Admin Tools</h1>
@@ -65,19 +66,22 @@ module.exports = React.createClass({
 	},
 	updatePassword: function(e) {
 		e.preventDefault();
-		if(this.refs.oldPass.value === Parse.User.current().get('videoAccess') && this.refs.newPass.value === this.refs.confirmNew.value && this.refs.newPass.value.length > 6) {
-			console.log('try');
+		if(this.refs.oldPass.value === Parse.User.current().get('videoAccess') && this.refs.newPass.value === this.refs.confirmNew.value && this.refs.newPass.value.length > 7) {
 			Parse.User.current().save({
 				videoAccess: this.refs.newPass.value
 			},
 			{
 				success: (password) => {
+					Materialize.toast('Video Access credentials updated.', 3000)
 					console.log(password, ' updated');
 				},
 				error: (password, error) => {
+					Materialize.toast('Video Access credentials updated.', 3000)
 					console.log(error);
 				}
 			});
+		} else {
+			Materialize.toast('Incorrect password credentials', 3000)
 		}
 	}
 })
